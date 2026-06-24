@@ -580,3 +580,29 @@ html, body {
   text-align: center !important;
   padding: 10px 0 !important;
 }
+/* ========================================================
+   LOGOYU ATOM KILIFINDAN ÇIKARMA VE DEVASA YAPMA KODU
+   ======================================================== */
+
+/* 1. Logoyu hem sınıfıyla, hem etiketiyle, hem de ID'siz her yoluyla yakalayıp devleştiriyoruz */
+img.menu-logo, 
+.menu-logo, 
+.logo-wrapper img, 
+header img {
+  width: 260px !important;       /* Genişliği 260px yaptık, ekranda dev gibi parlayacak! */
+  min-width: 260px !important;   /* Tarayıcının küçültme çabalarını kökten engelliyoruz */
+  height: auto !important;
+  max-width: 100% !important;
+  display: block !important;
+  margin: 20px auto !important;  /* Üstten ve alttan devasa boşluklarla ortaladık */
+}
+
+/* 2. Logonun içinde durduğu kutunun tüm genişlik sınırlarını patlatıyoruz */
+.logo-wrapper, 
+.menu-header, 
+header {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  display: block !important;
+}
