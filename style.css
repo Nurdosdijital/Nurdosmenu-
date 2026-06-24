@@ -498,3 +498,70 @@ html, body {
   font-size: 1.6rem !important; /* Fiyatlar aşırı belirgin */
   font-weight: 800 !important;
 }
+/* ========================================================
+   ULTRA DEV MODU - LOGO, BAŞLIK VE BUTONLAR MAKSİMUM BOYUTTA
+   ======================================================== */
+
+/* 1. Üst Kısım: Logo ve Nurdos Başlığını Devleştiriyoruz */
+.logo-wrapper img {
+  width: 140px !important;  /* Logoyu neredeyse iki katına çıkardık */
+  height: auto !important;
+  margin-bottom: 15px !important;
+}
+
+.logo-area {
+  font-size: 3.5rem !important; /* NURDOS yazısı artık ekrandan taşacak kadar büyük ve net */
+  font-weight: 800 !important;
+  letter-spacing: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.subtitle {
+  font-size: 1.3rem !important; /* Dijital QR Menü alt yazısı da rahatça okunsun */
+  letter-spacing: 6px !important;
+  margin-bottom: 40px !important; /* Butonlarla üst kısım arasına dev bir nefes alma payı */
+}
+
+/* 2. Butonları Ekranı Tamamen Yutacak Şekilde Devleştiriyoruz */
+.menu-category {
+  width: 100% !important;
+  margin-bottom: 28px !important; /* Butonların aralarını iyice açtık ki aşağıya doğru tüm boşluk kaplansın */
+}
+
+.category-toggle {
+  font-size: 2.6rem !important;  /* Yazı boyutunu muazzam yaptık, en arkadaki masadan bile okunur! */
+  font-weight: 800 !important;   /* Nettle fontu iyice kalın ve belirgin olsun */
+  padding: 50px 28px !important;  /* Dikey yüksekliği 50px yaptık, butonlar ekranda artık devasa birer blok */
+  width: 100% !important;
+  border-radius: 20px !important; /* Koca butonlara yakışacak şekilde köşeleri yumuşattık */
+  
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* 3. İkonlar ve Ok İşaretleri */
+.icon-left {
+  font-size: 2.2rem !important; /* Kategori ikonları (Waffle, Kahve vb.) dev gibi oldu */
+  margin-right: 24px !important;
+}
+
+.arrow {
+  font-size: 1.8rem !important; /* Sağdaki açılır ok işareti artık çok net */
+}
+
+/* 4. İçerik Kısmı (Kategori açıldığında içerideki ürünler ve fiyatlar) */
+.item-title {
+  font-size: 1.9rem !important; /* Ürün ismi dev boyutta */
+  font-weight: 800 !important;
+}
+
+.item-desc {
+  font-size: 1.4rem !important; /* Ürün açıklaması yaşlılar için çok rahat okunsun */
+  line-height: 1.6 !important;
+}
+
+.item-price {
+  font-size: 1.9rem !important; /* Fiyatlar aşırı belirgin, kabak gibi ortada */
+  font-weight: 900 !important;
+}
