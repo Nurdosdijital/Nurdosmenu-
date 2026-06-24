@@ -340,3 +340,43 @@ body {
   font-size: 1.35rem !important; /* Fiyatlar kabak gibi ortada olsun, karıştırılmasın */
   font-weight: 700 !important;
 }
+/* Ekrandaki Tüm Boşlukları Yok Etme ve Tam Ekran Yapma Ayarları */
+
+/* 1. Tarayıcının kendi verdiği gizli boşlukları sıfırlıyoruz */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important; /* Ekran yüksekliğini %100 yapıyoruz */
+  min-height: 100vh !important;
+  background-color: #0b151a !important; /* Alt tarafta siyah boşluk kalmasın, kendi rengimiz gelsin */
+}
+
+/* 2. Menü kutusunu tüm ekrana yayıyoruz */
+.menu-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important;
+  box-sizing: border-box !important;
+  padding: 24px 16px 40px 16px !important; /* Alttan biraz nefes alma payı verdik */
+  
+  /* Esnek yerleşimle elemanları aşağı doğru yayıyoruz */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+/* 3. Kategorilerin (Waffle'lar, Kahveler vb.) dikey yüksekliğini ve aralarındaki mesafeyi arttırıyoruz */
+.menu-category {
+  width: 100% !important;
+  margin-bottom: 16px !important; /* Butonların arasındaki dikey boşluğu açtık, ekranı kaplasınlar diye */
+}
+
+/* 4. Butonların kendisini biraz daha devasa yapıyoruz */
+.category-toggle {
+  font-size: 1.75rem !important; /* Yaşlılar için yazıyı bir tık daha büyüttük */
+  padding: 28px 20px !important;  /* Dikey kalınlığı iyice arttırdık, butonlar ekranda çok daha fazla yer kaplayacak */
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
