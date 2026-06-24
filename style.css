@@ -606,3 +606,31 @@ header {
   text-align: center !important;
   display: block !important;
 }
+/* ========================================================
+   LOGOYU ULTRA MAKSİMUM DEVASA BOYUTA GETİRME KODU
+   ======================================================== */
+
+/* Logoya dair internetteki tüm etiketleri ve sınıfları yutacak şekilde devleştiriyoruz */
+img.menu-logo, 
+.menu-logo, 
+.logo-wrapper img, 
+header img,
+.menu-header img {
+  width: 380px !important;       /* Ekranı enlemesine neredeyse tamamen kaplayacak dev boyut! */
+  min-width: 380px !important;   /* Tarayıcının bu boyutu aşağı çekmesini kesinlikle engelliyoruz */
+  height: auto !important;
+  max-width: 95% !important;     /* Ekrandan taşma yapıp taşmasın diye %95 emniyet payı */
+  display: block !important;
+  margin: 30px auto !important;  /* Üstten ve alttan çok net boşluklarla tam ortaya oturtma */
+}
+
+/* Logonun etrafındaki tüm taşıyıcı kutuların sınırlarını ve dolgularını patlatıyoruz */
+.logo-wrapper, 
+.menu-header, 
+header {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  display: block !important;
+  padding: 0 !important;
+}
