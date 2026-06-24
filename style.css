@@ -432,3 +432,69 @@ html, body {
   font-size: 1.4rem !important; /* İkonlar da yaşlılar için netleşsin */
   margin-right: 16px !important;
 }
+/* ========================================================
+   MAXİMUM YAŞLI DOSTU DEV BOYUT VE TAM EKRAN AYARLARI
+   ======================================================== */
+
+/* 1. Ekranın altındaki tüm boş renk kaçmalarını engelliyoruz */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  min-height: 100vh !important;
+  background-color: #0b151a !important; /* Boşluk kelimesini tamamen sildik */
+}
+
+/* 2. Ana konteyner ekranı tamamen yutsun */
+.menu-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important;
+  padding: 30px 18px 80px 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Butonları dikeyde ve yatayda devasa yapıyoruz */
+.menu-category {
+  width: 100% !important;
+  margin-bottom: 24px !important; /* Butonların aralarını iyice açtık ki ekranı tamamen kaplasınlar */
+}
+
+/* 4. Butonların kendisini, yazılarını ve et kalınlığını maksimuma çekiyoruz */
+.category-toggle {
+  font-size: 2.2rem !important;  /* Yazı boyutunu devasa yaptık, artık kaçarı yok çok net okunacak! */
+  font-weight: 700 !important;   /* Nettle fontunun o dolgun kıvrımları iyice kalınlaşsın ve belirginleşsin */
+  padding: 40px 24px !important;  /* Dikey yüksekliği 40px yaptık, butonlar ekranda dev gibi alan kaplayacak */
+  width: 100% !important;
+  border-radius: 16px !important; /* Köşeler o koca butonlara uygun şekilde daha şık ve yuvarlak */
+  
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* 5. Butonun içindeki sol ikonları ve sağdaki aşağı ok işaretini de büyütüyoruz */
+.icon-left {
+  font-size: 1.8rem !important; /* Kategori ikonları (Waffle, Kahve vb.) kabak gibi büyüdü */
+  margin-right: 20px !important;
+}
+
+.arrow {
+  font-size: 1.4rem !important; /* Sağdaki açılır ok işareti çok daha net */
+}
+
+/* 6. Kategori açıldığında içerideki ürünler ve fiyatlar da dev gibi olsun */
+.item-title {
+  font-size: 1.6rem !important; /* Ürün ismi çok net */
+  font-weight: 700 !important;
+}
+
+.item-desc {
+  font-size: 1.2rem !important; /* Ürün açıklaması rahat okunsun */
+  line-height: 1.5 !important;
+}
+
+.item-price {
+  font-size: 1.6rem !important; /* Fiyatlar aşırı belirgin */
+  font-weight: 800 !important;
+}
