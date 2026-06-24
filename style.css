@@ -1,692 +1,156 @@
-:root {
-  --bg-dark: #0f1c24;       /* Logona uygun premium derin turkuaz-siyah */
-  --card-bg: rgba(255, 255, 255, 0.03); 
-  --card-border: rgba(255, 255, 255, 0.08);
-  --gold: #2ba4b9;          /* Logondaki canlı turkuaz mavi */
-  --gold-hover: #50c4d9;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-}
-
+/* ========================================================
+   NURDOS DİJİTAL MENÜ - GLOBAL TEMİZLİK VE ARKA PLAN
+   ======================================================== */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-main);
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  background-color: #0b151a !important; /* Arka plan rengimiz */
   font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  padding: 20px 10px;
+  color: #ffffff;
   overflow-x: hidden;
-  position: relative;
 }
 
-.bg-glow-1, .bg-glow-2 {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(43,164,185,0.08) 0%, rgba(0,0,0,0) 70%);
-  z-index: -1;
-}
-.bg-glow-1 { top: 10%; left: -50px; }
-.bg-glow-2 { bottom: 20%; right: -50px; }
-
-.menu-container {
-  max-width: 500px;
-  margin: 0 auto;
+/* Renk Değişkenleri */
+:root {
+  --bg-main: #0b151a;
+  --bg-card: #12222a;
+  --gold: #c5a880;
+  --text-main: #ffffff;
+  --text-muted: #a0aec0;
 }
 
+/* ========================================================
+   ÜST KISIM: LOGO VE NURDOS BAŞLIĞI (ULTRA OKUNAKLI)
+   ======================================================== */
 .menu-header {
-  text-align: center;
-  margin-bottom: 40px;
-  margin-top: 20px;
-}
-
-/* Kibar ve Küçük Logo Kapsayıcısı */
-.logo-wrapper {
-  width: 80px !important;
-  height: 80px !important;
-  margin: 0 auto 10px auto !important;
-  border-radius: 50% !important;
-  padding: 2px !important;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-}
-
-/* Beyazlıkları Kırpılmış Tam Yuvarlak Logo */
-.menu-logo {
   width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  padding: 40px 20px 20px 20px !important;
+  display: block !important;
+  height: auto !important;
+}
+
+/* Logo Ayarları - Eni Küçültülmüş, Asla Ezilmeyen Büyük Boyut */
+img.menu-logo, 
+.menu-logo, 
+.logo-wrapper img {
+  width: 180px !important;       /* İstediğin gibi eni dengeli ve tatlı bir büyük boyutta */
+  max-width: 100% !important;
+  height: auto !important;       /* Dikeyde ezilmeyi kesinlikle önler */
+  display: block !important;
+  margin: 0 auto 20px auto !important; /* Kusursuz ortalama ve alt boşluk */
+  object-fit: contain !important;
 }
 
 .logo-area {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 4px;
-  text-shadow: 0px 4px 15px rgba(43, 164, 185, 0.3);
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
-
-.subtitle {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 6px;
-  margin-top: 10px;
+  font-size: 3.5rem !important;  /* NURDOS Yazısı dev boyutta */
+  font-weight: 800 !important;
+  letter-spacing: 4px !important;
+  margin-bottom: 10px !important;
+  color: var(--text-main);
   text-transform: uppercase;
 }
 
-.menu-category {
-  margin-bottom: 16px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--card-border);
-  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  transition: border 0.3s ease;
-}
-
-.menu-category.active {
-  border-color: rgba(43, 164, 185, 0.4);
-}
-
-.category-toggle {
-  width: 100%;
-  padding: 20px;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text-main);
-  font-size: 1.15rem;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.3s ease;
-}
-
-.category-toggle:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.icon-left {
+.subtitle {
+  font-size: 1.3rem !important;  /* Alt başlık */
+  letter-spacing: 6px !important;
+  margin-bottom: 30px !important;
   color: var(--gold);
-  margin-right: 12px;
-  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   MENÜ KAPSAYICISI VE DEV KATEGORİ BUTONLARI
+   ======================================================== */
+.menu-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 10px 18px 80px 18px !important;
+  display: block !important;
+  height: auto !important;
+}
+
+.menu-category {
+  width: 100% !important;
+  margin-bottom: 24px !important; /* Butonların araları açık, ekranı kaplasın diye */
+}
+
+/* Nettle (Berkshire Swash) Tarzı Devasa Butonlar */
+.category-toggle {
+  font-family: 'Berkshire Swash', cursive !important; /* Harika Nettle fontu */
+  font-size: 2.4rem !important;  /* Yaşlılar için devasa yazı boyutu */
+  font-weight: 700 !important;
+  padding: 42px 24px !important; /* Dikey kalınlık maksimumda, basması çok kolay */
+  width: 100% !important;
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid rgba(197, 168, 128, 0.2) !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  cursor: pointer;
+  text-transform: capitalize !important;
+}
+
+/* İkonlar ve Ok İşaretleri */
+.icon-left {
+  font-size: 2rem !important;    /* Sol ikonlar kabak gibi büyük */
+  color: var(--gold) !important;
+  margin-right: 18px !important;
 }
 
 .arrow {
-  color: var(--gold);
-  font-size: 0.9rem;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.5rem !important;  /* Sağdaki ok işareti çok net */
+  color: var(--gold) !important;
 }
 
-.menu-category.active .arrow {
-  transform: rotate(180deg);
-}
-
+/* ========================================================
+   KATEGORİ İÇERİĞİ: ÜRÜNLER VE FİYATLAR (DEV MODU)
+   ======================================================== */
 .category-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-grid {
-  padding: 0 16px 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: none; /* JavaScript tetikleyene kadar gizli */
+  padding: 15px 10px 0 10px;
 }
 
 .menu-item {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
-  padding: 10px;
-  gap: 14px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(43, 164, 185, 0.2);
-}
-
-.item-img-wrapper {
-  width: 75px;
-  height: 75px;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.item-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: scale 0.5s ease;
-}
-
-.menu-item:hover .item-img-wrapper img {
-  scale: 1.1;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  padding: 20px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .item-details {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
+  padding-right: 15px;
 }
 
 .item-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 2px;
-}
-
-.item-desc {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.3;
-  margin-bottom: 4px;
-}
-
-.item-price {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-
-.menu-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px 0;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  letter-spacing: 2px;
-  border-top: 1px solid var(--card-border);
-}
-/* Butonları Ekranın Eni Kadar Geniş Yapma */
-.menu-container {
-  max-width: 100% !important; /* Kapsayıcıyı ekran genişliğine açtık */
-  padding: 0 5px !important;    /* Kenarlardaki büyük boşluğu sıfırlayarak eni genişlettik */
-}
-
-.menu-category {
-  border-radius: 0px !important; /* Elit tam ekran görünümü için kategori köşelerini düzleştirdik */
-  margin-bottom: 8px !important; /* Butonlar arası şık mesafe */
-  border-left: none !important;  /* Sağ ve sol çizgileri kaldırarak tam ekranla bütünleştirdik */
-  border-right: none !important;
-}
-
-.category-toggle {
-  padding: 22px 16px !important; /* Geniş ekran için iç boşlukları optimize ettik */
-}
-/* Fotoğrafların Pürüzsüz, Net ve Yüksek Kalitede Görünmesi İçin */
-.item-img-wrapper img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  
-  /* Pikselleşmeyi önleyen ve resmi yumuşatan sihirli satırlar */
-  image-rendering: auto !important; 
-  transform: translateZ(0); /* Donanım ivmesini açarak resmi netleştirir */
-  -webkit-font-smoothing: antialiased;
-}
-/* Berlin Tarzı Modern Yazı Tipi Yükleme */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
-
-/* Buton Başlıklarını Berlin Tarzı Yapma */
-.category-toggle {
-  font-family: 'Oswald', sans-serif !important;
-  font-size: 1.3rem !important; /* Başlıkları biraz daha belirgin ve iddialı yaptık */
-  font-weight: 700 !important;   /* Berlin tarzı güçlü duruş için kalınlaştırdık */
-  text-transform: uppercase !important; /* Tamamı büyük harf olarak daha elit durması için */
-  letter-spacing: 2px !important;       /* Harflerin arasını hafif açarak nefes aldırdık */
-}
-
-/* Küçük İkon Ayarı */
-.icon-left {
-  font-size: 1.1rem !important;
-  vertical-align: middle !important;
-}
-
-  color: var(--gold) !important;
-}
-/* Tam Nettle (Berkshire Swash) Tarzı Buton Başlıkları */
-.category-toggle {
-  font-family: 'Berkshire Swash', cursive !important; /* Orijinal Nettle fontunu giydirdik */
-  font-size: 1.4rem !important;        /* O dolgun ve şık kıvrımların patlaması için ideal boyut */
-  font-weight: 400 !important;        
-  text-transform: capitalize !important; /* Baş harfleri büyük, tam görseldeki duruş */
-  letter-spacing: 0.5px !important;    /* Kıvrımların birbirine güzel bağlanması için */
-  color: var(--text-main) !important; 
-  padding: 16px 16px !important;
-}
-
-/* İkonların Nettle Tarzına Dengelenmesi */
-.icon-left {
-  font-size: 1.05rem !important;
-  color: var(--gold) !important;      
-  margin-right: 12px !important;
-}
-
-.arrow {
-  font-size: 0.85rem !important;
-  color: var(--gold) !important;
-  opacity: 0.8;
-}
-/* Yaşlı Müşteriler İçin Ekranı Kaplama ve Okunabilirlik Ayarları */
-
-/* 1. Menü kapsayıcısını genişletiyoruz ve ekrana yayıyoruz */
-.menu-container {
-  max-width: 100% !important; /* Ekranın sağından solundan tam pay alsın */
-  padding: 20px 16px !important;
-  min-height: 100vh !important; /* Ekranı aşağıya doğru tam boy kaplasın */
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-/* 2. Butonları dikeyde büyütüyor ve içlerini ferahlatıyoruz */
-.category-toggle {
-  font-size: 1.65rem !important; /* Yazı boyutunu yaşlı dostu, devasa yapıyoruz */
-  padding: 24px 20px !important;  /* Butonların dikey kalınlığını arttırıyoruz, basması çok kolaylaşacak */
-  margin-bottom: 12px !important; /* Butonların arasına tatlı boşluklar veriyoruz ki üst üste binmesinler */
-  border-radius: 12px !important; /* Köşeleri biraz daha yumuşatıp belirginleştiriyoruz */
-}
-
-/* 3. Butonların içindeki Nettle kıvrımlı ikonları ve ok işaretlerini de büyütüyoruz */
-.icon-left {
-  font-size: 1.3rem !important; /* Sol taraftaki kategori ikonları netleşsin */
-  margin-right: 14px !important;
-}
-
-.arrow {
-  font-size: 1.1rem !important; /* Sağdaki aşağı ok işareti iyice görünsün */
-}
-
-/* 4. Kategoriler açıldığında içindeki ürün isimleri ve fiyatları da yaşlılar için büyüsün */
-.item-title {
-  font-size: 1.35rem !important; /* Ürün ismi (Örn: Limonlu Cheesecake) daha iri ve kalın */
-  font-weight: 600 !important;
-}
-
-.item-desc {
-  font-size: 1rem !important; /* Ürün açıklaması rahatça okunsun */
-  line-height: 1.4 !important;
-}
-
-.item-price {
-  font-size: 1.35rem !important; /* Fiyatlar kabak gibi ortada olsun, karıştırılmasın */
+  font-size: 1.7rem !important;  /* Ürün ismi çok iri ve net */
   font-weight: 700 !important;
-}
-/* Ekrandaki Tüm Boşlukları Yok Etme ve Tam Ekran Yapma Ayarları */
-
-/* 1. Tarayıcının kendi verdiği gizli boşlukları sıfırlıyoruz */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 100% !important; /* Ekran yüksekliğini %100 yapıyoruz */
-  min-height: 100vh !important;
-  background-color: #0b151a !important; /* Alt tarafta siyah boşluk kalmasın, kendi rengimiz gelsin */
-}
-
-/* 2. Menü kutusunu tüm ekrana yayıyoruz */
-.menu-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 100vh !important;
-  box-sizing: border-box !important;
-  padding: 24px 16px 40px 16px !important; /* Alttan biraz nefes alma payı verdik */
-  
-  /* Esnek yerleşimle elemanları aşağı doğru yayıyoruz */
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-}
-
-/* 3. Kategorilerin (Waffle'lar, Kahveler vb.) dikey yüksekliğini ve aralarındaki mesafeyi arttırıyoruz */
-.menu-category {
-  width: 100% !important;
-  margin-bottom: 16px !important; /* Butonların arasındaki dikey boşluğu açtık, ekranı kaplasınlar diye */
-}
-
-/* 4. Butonların kendisini biraz daha devasa yapıyoruz */
-.category-toggle {
-  font-size: 1.75rem !important; /* Yaşlılar için yazıyı bir tık daha büyüttük */
-  padding: 28px 20px !important;  /* Dikey kalınlığı iyice arttırdık, butonlar ekranda çok daha fazla yer kaplayacak */
-  width: 100% !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
-/* ========================================================
-   EKRANI AŞAĞIYA DOĞRU %100 TAM BOY KAPLAMA VE BÜYÜTME REÇETESİ
-   ======================================================== */
-
-/* 1. Tüm ana katmanların alt boşluklarını sıfırlayıp ekran boyuna kilitliyoruz */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 100% !important;
-  min-height: 100vh !important;
-  background-color: #0b151a !important; /* Boşluk kalsa bile arka planla aynı renk olacak, siyah görünmeyecek */
-  overflow-x: hidden;
-}
-
-/* 2. Menü ana kutusunu aşağıya doğru tamamen esnetiyoruz */
-.menu-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 100vh !important; /* Ekran yüksekliği kadar aşağı uzanmasını zorunlu kılıyoruz */
-  height: auto !important;
-  box-sizing: border-box !important;
-  padding: 24px 16px 60px 16px !important; /* En alttaki logonun/yazının rahat durması için alt pay */
-  
-  /* İçindeki elemanları dikeyde yukarıdan aşağıya kusursuz yayması için */
-  display: block !important; 
-}
-
-/* 3. Kategorileri (Waffle'lar, Kahveler vb.) ekrana iyice yayıyoruz */
-.menu-category {
-  width: 100% !important;
-  margin-bottom: 20px !important; /* Butonların arasını iyice açtık ki aşağıya doğru tüm ekran dolsun */
-}
-
-/* 4. Butonları yaşlı dostu devasa boyutlara taşıyoruz */
-.category-toggle {
-  font-size: 1.85rem !important; /* Yazıları iyice büyüttük, gözlüksüz okunur */
-  padding: 32px 24px !important;  /* Dikey et kalınlığını maksimuma çıkardık, butonlar ekranda kocaman alan kaplayacak */
-  width: 100% !important;
-  border-radius: 14px !important;
-  display: block !important;      /* İç düzeni tam kaplamaya zorla */
-  text-align: left !important;
-}
-
-/* 5. Buton içindeki ikon ve yazının yan yana dengesi */
-.category-toggle span {
-  display: inline-block !important;
-}
-
-.icon-left {
-  font-size: 1.4rem !important; /* İkonlar da yaşlılar için netleşsin */
-  margin-right: 16px !important;
-}
-/* ========================================================
-   MAXİMUM YAŞLI DOSTU DEV BOYUT VE TAM EKRAN AYARLARI
-   ======================================================== */
-
-/* 1. Ekranın altındaki tüm boş renk kaçmalarını engelliyoruz */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 100% !important;
-  min-height: 100vh !important;
-  background-color: #0b151a !important; /* Boşluk kelimesini tamamen sildik */
-}
-
-/* 2. Ana konteyner ekranı tamamen yutsun */
-.menu-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 100vh !important;
-  padding: 30px 18px 80px 18px !important;
-  box-sizing: border-box !important;
-}
-
-/* 3. Butonları dikeyde ve yatayda devasa yapıyoruz */
-.menu-category {
-  width: 100% !important;
-  margin-bottom: 24px !important; /* Butonların aralarını iyice açtık ki ekranı tamamen kaplasınlar */
-}
-
-/* 4. Butonların kendisini, yazılarını ve et kalınlığını maksimuma çekiyoruz */
-.category-toggle {
-  font-size: 2.2rem !important;  /* Yazı boyutunu devasa yaptık, artık kaçarı yok çok net okunacak! */
-  font-weight: 700 !important;   /* Nettle fontunun o dolgun kıvrımları iyice kalınlaşsın ve belirginleşsin */
-  padding: 40px 24px !important;  /* Dikey yüksekliği 40px yaptık, butonlar ekranda dev gibi alan kaplayacak */
-  width: 100% !important;
-  border-radius: 16px !important; /* Köşeler o koca butonlara uygun şekilde daha şık ve yuvarlak */
-  
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
-
-/* 5. Butonun içindeki sol ikonları ve sağdaki aşağı ok işaretini de büyütüyoruz */
-.icon-left {
-  font-size: 1.8rem !important; /* Kategori ikonları (Waffle, Kahve vb.) kabak gibi büyüdü */
-  margin-right: 20px !important;
-}
-
-.arrow {
-  font-size: 1.4rem !important; /* Sağdaki açılır ok işareti çok daha net */
-}
-
-/* 6. Kategori açıldığında içerideki ürünler ve fiyatlar da dev gibi olsun */
-.item-title {
-  font-size: 1.6rem !important; /* Ürün ismi çok net */
-  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  margin-bottom: 6px;
 }
 
 .item-desc {
-  font-size: 1.2rem !important; /* Ürün açıklaması rahat okunsun */
+  font-size: 1.3rem !important;  /* Ürün açıklaması rahat okunur */
+  color: var(--text-muted) !important;
   line-height: 1.5 !important;
 }
 
 .item-price {
-  font-size: 1.6rem !important; /* Fiyatlar aşırı belirgin */
+  font-size: 1.7rem !important;  /* Fiyatlar aşırı belirgin */
   font-weight: 800 !important;
-}
-/* ========================================================
-   ULTRA DEV MODU - LOGO, BAŞLIK VE BUTONLAR MAKSİMUM BOYUTTA
-   ======================================================== */
-
-/* 1. Üst Kısım: Logo ve Nurdos Başlığını Devleştiriyoruz */
-.logo-wrapper img {
-  width: 140px !important;  /* Logoyu neredeyse iki katına çıkardık */
-  height: auto !important;
-  margin-bottom: 15px !important;
-}
-
-.logo-area {
-  font-size: 3.5rem !important; /* NURDOS yazısı artık ekrandan taşacak kadar büyük ve net */
-  font-weight: 800 !important;
-  letter-spacing: 4px !important;
-  margin-bottom: 10px !important;
-}
-
-.subtitle {
-  font-size: 1.3rem !important; /* Dijital QR Menü alt yazısı da rahatça okunsun */
-  letter-spacing: 6px !important;
-  margin-bottom: 40px !important; /* Butonlarla üst kısım arasına dev bir nefes alma payı */
-}
-
-/* 2. Butonları Ekranı Tamamen Yutacak Şekilde Devleştiriyoruz */
-.menu-category {
-  width: 100% !important;
-  margin-bottom: 28px !important; /* Butonların aralarını iyice açtık ki aşağıya doğru tüm boşluk kaplansın */
-}
-
-.category-toggle {
-  font-size: 2.6rem !important;  /* Yazı boyutunu muazzam yaptık, en arkadaki masadan bile okunur! */
-  font-weight: 800 !important;   /* Nettle fontu iyice kalın ve belirgin olsun */
-  padding: 50px 28px !important;  /* Dikey yüksekliği 50px yaptık, butonlar ekranda artık devasa birer blok */
-  width: 100% !important;
-  border-radius: 20px !important; /* Koca butonlara yakışacak şekilde köşeleri yumuşattık */
-  
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
-
-/* 3. İkonlar ve Ok İşaretleri */
-.icon-left {
-  font-size: 2.2rem !important; /* Kategori ikonları (Waffle, Kahve vb.) dev gibi oldu */
-  margin-right: 24px !important;
-}
-
-.arrow {
-  font-size: 1.8rem !important; /* Sağdaki açılır ok işareti artık çok net */
-}
-
-/* 4. İçerik Kısmı (Kategori açıldığında içerideki ürünler ve fiyatlar) */
-.item-title {
-  font-size: 1.9rem !important; /* Ürün ismi dev boyutta */
-  font-weight: 800 !important;
-}
-
-.item-desc {
-  font-size: 1.4rem !important; /* Ürün açıklaması yaşlılar için çok rahat okunsun */
-  line-height: 1.6 !important;
-}
-
-.item-price {
-  font-size: 1.9rem !important; /* Fiyatlar aşırı belirgin, kabak gibi ortada */
-  font-weight: 900 !important;
-}
-/* Logoyu Doğrudan Hedef Alarak Devleştirme */
-.menu-logo {
-  width: 160px !important;  /* Genişliği 160px yaparak logoyu devasa hale getirdik */
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 20px auto !important; /* Ortalanmasını ve altındaki yazıyla arasının açılmasını sağladık */
-}
-
-/* Garanti olsun diye taşıyıcı kutusunun sınırlarını da kaldırıyoruz */
-.logo-wrapper {
-  width: 100% !important;
-  text-align: center !important;
-  padding: 10px 0 !important;
-}
-/* ========================================================
-   LOGOYU ATOM KILIFINDAN ÇIKARMA VE DEVASA YAPMA KODU
-   ======================================================== */
-
-/* 1. Logoyu hem sınıfıyla, hem etiketiyle, hem de ID'siz her yoluyla yakalayıp devleştiriyoruz */
-img.menu-logo, 
-.menu-logo, 
-.logo-wrapper img, 
-header img {
-  width: 260px !important;       /* Genişliği 260px yaptık, ekranda dev gibi parlayacak! */
-  min-width: 260px !important;   /* Tarayıcının küçültme çabalarını kökten engelliyoruz */
-  height: auto !important;
-  max-width: 100% !important;
-  display: block !important;
-  margin: 20px auto !important;  /* Üstten ve alttan devasa boşluklarla ortaladık */
-}
-
-/* 2. Logonun içinde durduğu kutunun tüm genişlik sınırlarını patlatıyoruz */
-.logo-wrapper, 
-.menu-header, 
-header {
-  width: 100% !important;
-  max-width: 100% !important;
-  text-align: center !important;
-  display: block !important;
-}
-/* ========================================================
-   LOGOYU ULTRA MAKSİMUM DEVASA BOYUTA GETİRME KODU
-   ======================================================== */
-
-/* Logoya dair internetteki tüm etiketleri ve sınıfları yutacak şekilde devleştiriyoruz */
-img.menu-logo, 
-.menu-logo, 
-.logo-wrapper img, 
-header img,
-.menu-header img {
-  width: 380px !important;       /* Ekranı enlemesine neredeyse tamamen kaplayacak dev boyut! */
-  min-width: 380px !important;   /* Tarayıcının bu boyutu aşağı çekmesini kesinlikle engelliyoruz */
-  height: auto !important;
-  max-width: 95% !important;     /* Ekrandan taşma yapıp taşmasın diye %95 emniyet payı */
-  display: block !important;
-  margin: 30px auto !important;  /* Üstten ve alttan çok net boşluklarla tam ortaya oturtma */
-}
-
-/* Logonun etrafındaki tüm taşıyıcı kutuların sınırlarını ve dolgularını patlatıyoruz */
-.logo-wrapper, 
-.menu-header, 
-header {
-  width: 100% !important;
-  max-width: 100% !important;
-  text-align: center !important;
-  display: block !important;
-  padding: 0 !important;
-}
-/* ========================================================
-   LOGOYU ULTRA MAKSİMUM DEVASA BOYUTA GETİRME KODU
-   ======================================================== */
-
-/* Logoya dair internetteki tüm etiketleri ve sınıfları yutacak şekilde devleştiriyoruz */
-img.menu-logo, 
-.menu-logo, 
-.logo-wrapper img, 
-header img,
-.menu-header img {
-  width: 380px !important;       /* Ekranı enlemesine neredeyse tamamen kaplayacak dev boyut! */
-  min-width: 380px !important;   /* Tarayıcının bu boyutu aşağı çekmesini kesinlikle engelliyoruz */
-  height: auto !important;
-  max-width: 95% !important;     /* Ekrandan taşma yapıp taşmasın diye %95 emniyet payı */
-  display: block !important;
-  margin: 30px auto !important;  /* Üstten ve alttan çok net boşluklarla tam ortaya oturtma */
-}
-
-/* Logonun etrafındaki tüm taşıyıcı kutuların sınırlarını ve dolgularını patlatıyoruz */
-.logo-wrapper, 
-.menu-header, 
-header {
-  width: 100% !important;
-  max-width: 100% !important;
-  text-align: center !important;
-  display: block !important;
-  padding: 0 !important;
-}
-/* ========================================================
-   LOGOYU MAREKTE EDİP ENİNİ DENGELİ BÜYÜTME KODU
-   ======================================================== */
-
-img.menu-logo, 
-.menu-logo, 
-.logo-wrapper img, 
-header img,
-.menu-header img {
-  width: 180px !important;       /* Enini biraz küçülttük, ekrana cuk diye oturacak */
-  min-width: 180px !important;   /* Sabit kalmasını garanti ediyoruz */
-  height: auto !important;       /* Boyunun ezilmesini kesinlikle engelliyoruz */
-  max-width: 100% !important;    
-  display: block !important;
-  margin: 15px auto !important;  /* Üstten ve alttan tatlı bir boşluk */
-  object-fit: contain !important;
-}
-
-/* Taşıyıcı kutuları tamamen rahat bırakıyoruz */
-.logo-wrapper, 
-.menu-header, 
-header {
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  display: block !important;
-  text-align: center !important;
+  color: var(--gold) !important;
+  white-space: nowrap;
 }
