@@ -296,3 +296,47 @@ body {
   color: var(--gold) !important;
   opacity: 0.8;
 }
+/* Yaşlı Müşteriler İçin Ekranı Kaplama ve Okunabilirlik Ayarları */
+
+/* 1. Menü kapsayıcısını genişletiyoruz ve ekrana yayıyoruz */
+.menu-container {
+  max-width: 100% !important; /* Ekranın sağından solundan tam pay alsın */
+  padding: 20px 16px !important;
+  min-height: 100vh !important; /* Ekranı aşağıya doğru tam boy kaplasın */
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 2. Butonları dikeyde büyütüyor ve içlerini ferahlatıyoruz */
+.category-toggle {
+  font-size: 1.65rem !important; /* Yazı boyutunu yaşlı dostu, devasa yapıyoruz */
+  padding: 24px 20px !important;  /* Butonların dikey kalınlığını arttırıyoruz, basması çok kolaylaşacak */
+  margin-bottom: 12px !important; /* Butonların arasına tatlı boşluklar veriyoruz ki üst üste binmesinler */
+  border-radius: 12px !important; /* Köşeleri biraz daha yumuşatıp belirginleştiriyoruz */
+}
+
+/* 3. Butonların içindeki Nettle kıvrımlı ikonları ve ok işaretlerini de büyütüyoruz */
+.icon-left {
+  font-size: 1.3rem !important; /* Sol taraftaki kategori ikonları netleşsin */
+  margin-right: 14px !important;
+}
+
+.arrow {
+  font-size: 1.1rem !important; /* Sağdaki aşağı ok işareti iyice görünsün */
+}
+
+/* 4. Kategoriler açıldığında içindeki ürün isimleri ve fiyatları da yaşlılar için büyüsün */
+.item-title {
+  font-size: 1.35rem !important; /* Ürün ismi (Örn: Limonlu Cheesecake) daha iri ve kalın */
+  font-weight: 600 !important;
+}
+
+.item-desc {
+  font-size: 1rem !important; /* Ürün açıklaması rahatça okunsun */
+  line-height: 1.4 !important;
+}
+
+.item-price {
+  font-size: 1.35rem !important; /* Fiyatlar kabak gibi ortada olsun, karıştırılmasın */
+  font-weight: 700 !important;
+}
