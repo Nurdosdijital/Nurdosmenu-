@@ -1,24 +1,19 @@
 /* ========================================================
-   NURDOS DİJİTAL MENÜ - GLOBAL TEMİZLİK VE ARKA PLAN
+   NURDOS DİJİTAL MENÜ - ORİJİNAL VE STABİL SÜRÜM
    ======================================================== */
 * {
-  box-sizing: border-box !important;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: auto !important;
-  min-height: 100vh !important;
-  background-color: #0b151a !important; /* Arka plan rengimiz */
+  background-color: #0b151a;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Renk Değişkenleri */
 :root {
   --bg-main: #0b151a;
   --bg-card: #12222a;
@@ -27,130 +22,111 @@ html, body {
   --text-muted: #a0aec0;
 }
 
-/* ========================================================
-   ÜST KISIM: LOGO VE NURDOS BAŞLIĞI (ULTRA OKUNAKLI)
-   ======================================================== */
-.menu-header {
-  width: 100% !important;
-  max-width: 100% !important;
-  text-align: center !important;
-  padding: 40px 20px 20px 20px !important;
-  display: block !important;
-  height: auto !important;
+.menu-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px;
 }
 
-/* Logo Ayarları - Eni Küçültülmüş, Asla Ezilmeyen Büyük Boyut */
-img.menu-logo, 
-.menu-logo, 
-.logo-wrapper img {
-  width: 180px !important;       /* İstediğin gibi eni dengeli ve tatlı bir büyük boyutta */
-  max-width: 100% !important;
-  height: auto !important;       /* Dikeyde ezilmeyi kesinlikle önler */
-  display: block !important;
-  margin: 0 auto 20px auto !important; /* Kusursuz ortalama ve alt boşluk */
-  object-fit: contain !important;
+.menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+/* Orijinal Logo Ayarı */
+.menu-logo {
+  width: 90px;
+  height: auto;
+  margin-bottom: 12px;
 }
 
 .logo-area {
-  font-size: 3.5rem !important;  /* NURDOS Yazısı dev boyutta */
-  font-weight: 800 !important;
-  letter-spacing: 4px !important;
-  margin-bottom: 10px !important;
-  color: var(--text-main);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 4px;
 }
 
 .subtitle {
-  font-size: 1.3rem !important;  /* Alt başlık */
-  letter-spacing: 6px !important;
-  margin-bottom: 30px !important;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
   color: var(--gold);
   text-transform: uppercase;
 }
 
-/* ========================================================
-   MENÜ KAPSAYICISI VE DEV KATEGORİ BUTONLARI
-   ======================================================== */
-.menu-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 10px 18px 80px 18px !important;
-  display: block !important;
-  height: auto !important;
-}
-
 .menu-category {
-  width: 100% !important;
-  margin-bottom: 24px !important; /* Butonların araları açık, ekranı kaplasın diye */
+  margin-bottom: 12px;
 }
 
-/* Nettle (Berkshire Swash) Tarzı Devasa Butonlar */
+/* Tam Nettle (Berkshire Swash) Tarzı Buton Başlıkları */
 .category-toggle {
-  font-family: 'Berkshire Swash', cursive !important; /* Harika Nettle fontu */
-  font-size: 2.4rem !important;  /* Yaşlılar için devasa yazı boyutu */
-  font-weight: 700 !important;
-  padding: 42px 24px !important; /* Dikey kalınlık maksimumda, basması çok kolay */
-  width: 100% !important;
-  background-color: var(--bg-card) !important;
-  color: var(--text-main) !important;
-  border: 1px solid rgba(197, 168, 128, 0.2) !important;
-  border-radius: 16px !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
+  font-family: 'Berkshire Swash', cursive !important; 
+  font-size: 1.4rem !important;        
+  font-weight: 400 !important;        
+  text-transform: capitalize !important; 
+  letter-spacing: 0.5px !important;    
+  color: var(--text-main) !important; 
+  padding: 16px 16px !important;
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(197, 168, 128, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
-  text-transform: capitalize !important;
 }
 
-/* İkonlar ve Ok İşaretleri */
 .icon-left {
-  font-size: 2rem !important;    /* Sol ikonlar kabak gibi büyük */
-  color: var(--gold) !important;
-  margin-right: 18px !important;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-right: 10px;
 }
 
 .arrow {
-  font-size: 1.5rem !important;  /* Sağdaki ok işareti çok net */
-  color: var(--gold) !important;
+  font-size: 0.9rem;
+  color: var(--gold);
+  transition: transform 0.3s ease;
 }
 
-/* ========================================================
-   KATEGORİ İÇERİĞİ: ÜRÜNLER VE FİYATLAR (DEV MODU)
-   ======================================================== */
+/* Kategori İçeriği */
 .category-content {
-  display: none; /* JavaScript tetikleyene kadar gizli */
-  padding: 15px 10px 0 10px;
+  display: none;
+  padding: 10px 4px 0 4px;
 }
 
 .menu-item {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: flex-start !important;
-  padding: 20px 0 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .item-details {
   flex: 1;
-  padding-right: 15px;
+  padding-right: 12px;
 }
 
 .item-title {
-  font-size: 1.7rem !important;  /* Ürün ismi çok iri ve net */
-  font-weight: 700 !important;
-  color: var(--text-main) !important;
-  margin-bottom: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
 }
 
 .item-desc {
-  font-size: 1.3rem !important;  /* Ürün açıklaması rahat okunur */
-  color: var(--text-muted) !important;
-  line-height: 1.5 !important;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .item-price {
-  font-size: 1.7rem !important;  /* Fiyatlar aşırı belirgin */
-  font-weight: 800 !important;
-  color: var(--gold) !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
   white-space: nowrap;
 }
