@@ -380,3 +380,55 @@ html, body {
   justify-content: space-between !important;
   align-items: center !important;
 }
+/* ========================================================
+   EKRANI AŞAĞIYA DOĞRU %100 TAM BOY KAPLAMA VE BÜYÜTME REÇETESİ
+   ======================================================== */
+
+/* 1. Tüm ana katmanların alt boşluklarını sıfırlayıp ekran boyuna kilitliyoruz */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  min-height: 100vh !important;
+  background-color: #0b151a !important; /* Boşluk kalsa bile arka planla aynı renk olacak, siyah görünmeyecek */
+  overflow-x: hidden;
+}
+
+/* 2. Menü ana kutusunu aşağıya doğru tamamen esnetiyoruz */
+.menu-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh !important; /* Ekran yüksekliği kadar aşağı uzanmasını zorunlu kılıyoruz */
+  height: auto !important;
+  box-sizing: border-box !important;
+  padding: 24px 16px 60px 16px !important; /* En alttaki logonun/yazının rahat durması için alt pay */
+  
+  /* İçindeki elemanları dikeyde yukarıdan aşağıya kusursuz yayması için */
+  display: block !important; 
+}
+
+/* 3. Kategorileri (Waffle'lar, Kahveler vb.) ekrana iyice yayıyoruz */
+.menu-category {
+  width: 100% !important;
+  margin-bottom: 20px !important; /* Butonların arasını iyice açtık ki aşağıya doğru tüm ekran dolsun */
+}
+
+/* 4. Butonları yaşlı dostu devasa boyutlara taşıyoruz */
+.category-toggle {
+  font-size: 1.85rem !important; /* Yazıları iyice büyüttük, gözlüksüz okunur */
+  padding: 32px 24px !important;  /* Dikey et kalınlığını maksimuma çıkardık, butonlar ekranda kocaman alan kaplayacak */
+  width: 100% !important;
+  border-radius: 14px !important;
+  display: block !important;      /* İç düzeni tam kaplamaya zorla */
+  text-align: left !important;
+}
+
+/* 5. Buton içindeki ikon ve yazının yan yana dengesi */
+.category-toggle span {
+  display: inline-block !important;
+}
+
+.icon-left {
+  font-size: 1.4rem !important; /* İkonlar da yaşlılar için netleşsin */
+  margin-right: 16px !important;
+}
