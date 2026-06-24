@@ -662,3 +662,31 @@ header {
   display: block !important;
   padding: 0 !important;
 }
+/* ========================================================
+   LOGOYU MAREKTE EDİP ENİNİ DENGELİ BÜYÜTME KODU
+   ======================================================== */
+
+img.menu-logo, 
+.menu-logo, 
+.logo-wrapper img, 
+header img,
+.menu-header img {
+  width: 180px !important;       /* Enini biraz küçülttük, ekrana cuk diye oturacak */
+  min-width: 180px !important;   /* Sabit kalmasını garanti ediyoruz */
+  height: auto !important;       /* Boyunun ezilmesini kesinlikle engelliyoruz */
+  max-width: 100% !important;    
+  display: block !important;
+  margin: 15px auto !important;  /* Üstten ve alttan tatlı bir boşluk */
+  object-fit: contain !important;
+}
+
+/* Taşıyıcı kutuları tamamen rahat bırakıyoruz */
+.logo-wrapper, 
+.menu-header, 
+header {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  display: block !important;
+  text-align: center !important;
+}
