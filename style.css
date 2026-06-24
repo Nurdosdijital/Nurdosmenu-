@@ -565,3 +565,18 @@ html, body {
   font-size: 1.9rem !important; /* Fiyatlar aşırı belirgin, kabak gibi ortada */
   font-weight: 900 !important;
 }
+/* Logoyu Doğrudan Hedef Alarak Devleştirme */
+.menu-logo {
+  width: 160px !important;  /* Genişliği 160px yaparak logoyu devasa hale getirdik */
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 20px auto !important; /* Ortalanmasını ve altındaki yazıyla arasının açılmasını sağladık */
+}
+
+/* Garanti olsun diye taşıyıcı kutusunun sınırlarını da kaldırıyoruz */
+.logo-wrapper {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 10px 0 !important;
+}
